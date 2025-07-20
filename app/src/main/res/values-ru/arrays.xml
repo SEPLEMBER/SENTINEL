@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="pref_rec_mode_entries">
+        <item>Обычное видео (MP4)</item>
+        <item>Таймлапс видео (MP4)</item>
+        <item>Таймлапс изображения (JPG)</item>
+    </string-array>
+    <string-array name="pref_rec_mode_values">
+        <item>VIDEO</item>
+        <item>VIDEO_TIME_LAPSE</item>
+        <item>IMAGE_TIME_LAPSE</item>
+    </string-array>
+</resources>
