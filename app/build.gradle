@@ -3,6 +3,7 @@ plugins {
 }
 
 android {
+    namespace "org.woheller69.TimeLapseCam"
     compileSdk 34
 
     defaultConfig {
@@ -11,7 +12,7 @@ android {
         targetSdk 34
         versionCode 19
         versionName "1.9"
-
+        // testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
@@ -20,15 +21,22 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    buildFeatures {
+        viewBinding true
+        // dataBinding false
+    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
 }
 
 dependencies {
-
-    implementation "androidx.core:core:1.9.0"  //needed for broadcast receiver
+    
+    implementation "androidx.core:core-ktx:1.10.1"
     implementation 'androidx.appcompat:appcompat:1.5.1'
     implementation 'com.google.android.material:material:1.7.0'
 
