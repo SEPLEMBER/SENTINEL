@@ -22,13 +22,13 @@ jobs:
         with:
           distribution: 'zulu'
           java-version: '17'
-          cache: 'gradle'
+          cache: gradle
 
       - name: Make gradlew executable
         run: chmod +x ./gradlew
 
-      - name: Build with Gradle
-        run: ./gradlew build
+      - name: Build (clean + assemble)
+        run: ./gradlew clean build
 
       - name: Build Debug APK
         run: ./gradlew assembleDebug
@@ -41,9 +41,6 @@ jobs:
 
       - name: Build Release APK
         run: ./gradlew assembleRelease
-
-      - name: List APK files
-        run: ls -la app/build/outputs/apk/release/
 
       - name: Upload Release APK
         uses: actions/upload-artifact@v4
