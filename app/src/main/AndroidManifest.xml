@@ -1,4 +1,5 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="at.andreasrohner.spartantimelapserec">
 
     <uses-feature
         android:name="android.hardware.camera"
@@ -7,8 +8,7 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
-    <uses-permission
-        android:name="android.permission.SCHEDULE_EXACT_ALARM"
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM"
         android:maxSdkVersion="32" />
     <uses-permission android:name="android.permission.USE_EXACT_ALARM" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -29,9 +29,8 @@
         android:launchMode="singleTask"
         android:configChanges="orientation|screenSize|screenLayout|smallestScreenSize|uiMode"
         android:theme="@style/Theme.TimeLapse" >
-
         <activity
-            android:name=".MainActivity"
+            android:name="at.andreasrohner.spartantimelapserec.MainActivity"
             android:windowSoftInputMode="stateUnchanged"
             android:exported="true">
             <intent-filter>
@@ -39,26 +38,24 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
-            android:name=".PreviewActivity"
+            android:name="at.andreasrohner.spartantimelapserec.PreviewActivity"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
             android:windowSoftInputMode="stateAlwaysHidden" >
         </activity>
 
         <service
-            android:name=".ForegroundService"
             android:exported="false"
-            android:foregroundServiceType="camera" />
+            android:foregroundServiceType="camera"
+            android:name="at.andreasrohner.spartantimelapserec.ForegroundService" />
 
         <service
-            android:name=".rest.RestService"
             android:exported="false"
-            android:foregroundServiceType="camera" />
+            android:foregroundServiceType="camera"
+            android:name="at.andreasrohner.spartantimelapserec.rest.RestService" />
 
-        <receiver android:name=".ScheduleReceiver" />
-        <receiver android:name=".PowerSavingReceiver" />
-
+        <receiver android:name="at.andreasrohner.spartantimelapserec.ScheduleReceiver" />
+        <receiver android:name="at.andreasrohner.spartantimelapserec.PowerSavingReceiver" />
     </application>
 
 </manifest>
